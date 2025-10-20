@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: 'Pruebas de oportunidades del área comercial de Campuslands por sede y modalidad'
+
+env:
+  GEMINI_API_KEY: AIzaSyB_5h2VGZOaDOd5fL7AFiT8Bf5AJFXvBGE
+
+providers:
+  - id: google:gemini-2.5-flash
+    config:
+      apiKey: AIzaSyB_5h2VGZOaDOd5fL7AFiT8Bf5AJFXvBGE
+
+prompts:
+  - |
+    Soy un camper de Campuslands interesado en oportunidades comerciales en el campus de {{sede}}.
+    Quiero buscar información sobre empresas para {{tipo_oportunidad}} con modalidad {{modalidad}}.
+    ¿Dónde puedo encontrar información sobre estas empresas y cómo puedo aprovechar estas oportunidades?
+
+tests:
+  # Zona Franca
+  - vars:
+      sede: Zona Franca
+      tipo_oportunidad: Contrato SENA
+      modalidad: Virtual
+  - vars:
+      sede: Zona Franca
+      tipo_oportunidad: Contrato SENA
+      modalidad: Presencial
+  - vars:
+      sede: Zona Franca
+      tipo_oportunidad: Contrato normal
+      modalidad: Virtual
+  - vars:
+      sede: Zona Franca
+      tipo_oportunidad: Contrato normal
+      modalidad: Presencial
+  - vars:
+      sede: Zona Franca
+      tipo_oportunidad: Contrato por proyecto
+      modalidad: Virtual
+  - vars:
+      sede: Zona Franca
+      tipo_oportunidad: Contrato por proyecto
+      modalidad: Presencial
+
+  # Cajasan
+  - vars:
+      sede: Cajasan
+      tipo_oportunidad: Contrato SENA
+      modalidad: Virtual
+  - vars:
+      sede: Cajasan
+      tipo_oportunidad: Contrato SENA
+      modalidad: Presencial
+  - vars:
+      sede: Cajasan
+      tipo_oportunidad: Contrato normal
+      modalidad: Virtual
+  - vars:
+      sede: Cajasan
+      tipo_oportunidad: Contrato normal
+      modalidad: Presencial

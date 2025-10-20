@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: 'Pruebas de ponderado de notas para distintos campus y combinaciones válidas'
+
+env:
+  GEMINI_API_KEY: AIzaSyB_5h2VGZOaDOd5fL7AFiT8Bf5AJFXvBGE
+
+providers:
+  - id: google:gemini-2.5-flash
+    config:
+      apiKey: AIzaSyB_5h2VGZOaDOd5fL7AFiT8Bf5AJFXvBGE
+
+prompts:
+  - |
+    Soy un camper de Campuslands en ruta NodeJS en el campus de {{sede}} y quiero sacar
+    el ponderado de mis notas: {{software_nota}} en Software que pesa {{software_peso}}%, 
+    87 en Inglés que pesa 15%, 60 en SER que pesa 15%, 100 en Empleabilidad que pesa {{empleabilidad_peso}}%, 
+    y 62 en Razonamiento Lógico que pesa 10%. ¿Cuál sería mi nota final?
+
+tests:
+
+  # Cajasan
+  - vars:
+      sede: Cajasan
+      software_nota: 80
+      software_peso: 50
+      empleabilidad_peso: 10
+
+  - vars:
+      sede: Cajasan
+      software_nota: 80
+      software_peso: 55
+      empleabilidad_peso: 5
+
+  - vars:
+      sede: Cajasan
+      software_nota: 90
+      software_peso: 50
+      empleabilidad_peso: 10
+
+  - vars:
+      sede: Cajasan
+      software_nota: 90
+      software_peso: 55
+      empleabilidad_peso: 5
+
+  # Bogotá
+  - vars:
+      sede: Bogotá
+      software_nota: 80
+      software_peso: 50
+      empleabilidad_peso: 10
+
+  - vars:
+      sede: Bogotá
+      software_nota: 80
+      software_peso: 55
+      empleabilidad_peso: 5
+
+  - vars:
+      sede: Bogotá
+      software_nota: 90
+      software_peso: 50
+      empleabilidad_peso: 10
+
+  - vars:
+      sede: Bogotá
+      software_nota: 90
+      software_peso: 55
+      empleabilidad_peso: 5
+
+  # Zona Franca
+  - vars:
+      sede: Zona Franca
+      software_nota: 80
+      software_peso: 50
+      empleabilidad_peso: 10
+
+  - vars:
+      sede: Zona Franca
+      software_nota: 80
+      software_peso: 55
+      empleabilidad_peso: 5

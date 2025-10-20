@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: 'Pruebas de infromacion de ingreso en difernetes horarios a lasede de campuslands'
+
+env:
+  GEMINI_API_KEY: AIzaSyB_5h2VGZOaDOd5fL7AFiT8Bf5AJFXvBGE
+
+providers:
+  - id: google:gemini-2.5-flash
+    config:
+      apiKey: AIzaSyB_5h2VGZOaDOd5fL7AFiT8Bf5AJFXvBGE
+
+prompts:
+  - |
+    Soy un camper en desarrollo de software de Campuslands y quiero saber
+    si puedo ingresar a {{lugar}} si llego después de {{hora}} de la jornada de estudio.
+
+tests:
+  - # Test 1: Zona Franca 6 am
+    vars:
+      lugar: Zona Franca
+      hora: las 6 AM
+
+  - # Test 2: Zona Franca primera clase
+    vars:
+      lugar: Zona Franca
+      hora: la primera hora de clase
+
+  - # Test 3: Zona Franca finalizada
+    vars:
+      lugar: Zona Franca
+      hora: la finalizacion
+
+  - # Test 4: Campus Cajasan 6 am
+    vars:
+      lugar: el campus de Cajasan
+      hora: las 6 am
+
+  - # Test 5: Campus Cajasan primera clase
+    vars:
+      lugar: el campus de Cajasan
+      hora: la primera hora de clase
+
+  - # Test 6: Campus Cajasan finalizada
+    vars:
+      lugar: el campus de Cajasan
+      hora: la finalizacion
+
+  - # Test 7: Campus Bogotá 6 am
+    vars:
+      lugar: el campus bogota
+      hora: las 6 am
+
+  - # Test 8: Campus Bogotá primera clase
+    vars:
+      lugar: el campus bogota
+      hora: la primera hora de clase
+
+  - # Test 9: Campus Bogotá finalizada
+    vars:
+      lugar: el campus bogota
+      hora: la finalizacion
+
+  - # Test 10: Campus Bogotá ya salido
+    vars:
+      lugar: el campus bogota
+      hora: haber salido una vez
